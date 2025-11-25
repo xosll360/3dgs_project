@@ -1,0 +1,9 @@
+$:
+  docker:
+    build: .ide/Dockerfile
+    runner:
+      tags: cnb:arch:amd64:gpu
+      gpu: 1
+  services:
+    - vscode
+    - docker
