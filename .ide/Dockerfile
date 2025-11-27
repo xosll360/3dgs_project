@@ -25,7 +25,7 @@ ENV PATH="/opt/conda/bin:$PATH"
 
 # 复制项目的 environment.yml 文件到容器中
 # 确保你的项目根目录下有这个文件
-COPY environment.yml .
+COPY ../environment.yml .
 
 # 使用 Conda 创建环境
 # 这会自动处理 Python 版本和所有依赖（包括 PyTorch）
