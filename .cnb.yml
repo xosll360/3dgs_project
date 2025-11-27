@@ -1,9 +1,11 @@
 $:
-  docker:
-    build: .ide/Dockerfile
-    runner:
-      tags: cnb:arch:amd64:gpu
-      gpu: 1
-  services:
-    - vscode
-    - docker
+  vscode:
+    - docker:
+        build: .ide/Dockerfile  # 优先用Dockerfile构建
+        # image: cnbcool/default-dev-env:latest  # 备用镜像（可选）
+      services:
+        - vscode
+        - docker
+      stages:
+        - name: ls
+          script: ls -al
